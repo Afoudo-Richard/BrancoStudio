@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/branco-studio-logo.jpg" type="image/x-icon">
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <!-- google font style (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Splide js -->
+
+    <script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+
+    <!-- Glide js -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+    <!-- Alphine js light weight js library -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Branco Studio</title>
+</head>
+
+<body class="font-poppins" x-data="pageData">
+    <!-- Navbar -->
+    <nav class="flex justify-between bg-gray-900 text-white w-full">
+        <div class="container px-5 xl:px-12 py-6 flex w-full items-center">
+            <a class="text-3xl font-bold font-heading" href="#">
+                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+                <div class="w-24">
+                    <img src="./assets/images/branco-studio-logo.jpg" class="w-full" alt="">
+                </div>
+            </a>
+            <!-- Nav Links -->
+            <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                <li><a class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a class="hover:text-gray-200" href="#">Catagory</a></li>
+                <li><a class="hover:text-gray-200" href="#">Collections</a></li>
+                <li><a class="hover:text-gray-200" href="#">Contact Us</a></li>
+            </ul>
+            <!-- Header Icons -->
+            <div class="hidden xl:flex items-center space-x-5">
+                <a class="hover:text-gray-200" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </a>
+                <a class="flex items-center hover:text-gray-200" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="flex absolute -mt-5 ml-4">
+                        <span
+                            class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+                        </span>
+                    </span>
+                </a>
+                <!-- Sign In / Register      -->
+                <a class="flex items-center hover:text-gray-200" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+        <!-- Responsive navbar -->
+        <a class="xl:hidden flex mr-6 items-center" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span class="flex absolute -mt-5 ml-4">
+                <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+                </span>
+            </span>
+        </a>
+        <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </a>
+    </nav>
+    <!-- <nav class="relative w-full " @scroll.window="showBar = (window.pageYOffset > 200) ? true : false">
+        <div class="border-b border-gray-300 hidden md:block">
+
+            <div class="container">
+                <div class="flex justify-between items-center py-5">
+                    <div class="flex gap-x-2">
+                        <span class="header_icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="header_icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <span class="header_icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="flex items-center space-x-10">
+                        <span class="flex space-x-2 text-sm">
+                            <span class=" text-primary"><i class="fa-solid fa-envelope"></i></span>
+                            <span class="text-gray-400">info@domain.com</span>
+                        </span>
+
+                        <span class="flex space-x-2 text-sm">
+                            <span class=" text-primary"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text-gray-400">+237 672367020</span>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=""
+            :class="{'fixed w-full py-3 z-[10000] bg-white left-0 right-0 -top-96  transition duration-700 transform translate-y-96 text-black shadow-lg': showBar, 'py-5':!showBar}">
+            <div class="container">
+                <div class="flex justify-between items-center">
+
+                    <div>
+                        <img src="/assets/images/Group 1 (1).png" class="w-24" alt="">
+                    </div>
+
+                Menu Items
+                    <div class="hidden space-x-6 lg:flex text-gray-400">
+                        <ul class="flex space-x-8">
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Home</a>
+                            </li>
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Products</a>
+                            </li>
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">About Us</a>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Special</a>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Pages</a>
+                                <span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </span>
+
+                                <ul
+                                    class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Blog</a>
+                                <span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </span>
+
+                                <ul
+                                    class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+
+                                    <li class="p-2 text-black">
+                                        <a href="#">Something</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li
+                                class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                                <a href="#" class="">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+
+                    Hamburger Icon
+                    <span class="text-2xl block lg:hidden focus:outline-none text-blue-zodiac" @click="open = !open">
+                        <i class="fa-solid fa-bars" x-show="!open"></i>
+                        <i class="fa-solid fa-xmark" x-show="open"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        Mobile Menu
+
+        <div class="fixed top-0 z-[60000] h-screen w-9/12 bg-alice-blue px-6 pt-10 transition-all duration-200"
+            :class="{'left-0': open, '-left-full': !open}">
+
+            <div class="mb-8">
+                <img src="/assets/images/Group 1 (1).png" class="w-24" alt="">
+            </div>
+
+
+            <ul class="flex flex-col space-y-8">
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Home</a>
+                </li>
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Services</a>
+                </li>
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">About</a>
+                </li>
+
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Pages</a>
+                    <span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+
+                    <ul
+                        class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Blog</a>
+                    <span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+
+                    <ul
+                        class="absolute top-full left-0 w-44  flex flex-col p-2 shadow-lg bg-white invisible group-hover:visible transition-all z-[2000]">
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+
+                        <li class="p-2 text-black">
+                            <a href="#">Something</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="flex items-center space-x-2 relative group hover:text-primary transition-all duration-200 ">
+                    <a href="#" class="">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="lg:hidden">
+                <div id="menu"
+                    class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+                    :class="open ? 'flex' : 'hidden'">
+                    <a href="/#home" class="nav-link hover:text-darkGrayishBlue">Home</a>
+                    <a href="/#about" class="nav-link hover:text-darkGrayishBlue">About Us</a>
+                    <a href="/#howItWorks" class="nav-link hover:text-darkGrayishBlue">How It Works</a>
+                    <a href="/#team" class="nav-link hover:text-darkGrayishBlue">Team</a>
+                    <a href="/#services" class="nav-link hover:text-darkGrayishBlue">Services</a>
+                    <a href="/#blog" class="nav-link hover:text-darkGrayishBlue">Blog</a>
+                    <a href="/#contact" class="nav-link hover:text-darkGrayishBlue">Contact</a>
+                </div>
+            </div>
+    </nav> -->
+    <!-- End of Navbar -->
+
+    <!-- Hero Section -->
+    <section style="background-image: url('assets/images/drugs_hero_1.jpg.webp'); background-position: 50% -25px;"
+        class="h-[400px] md:h-[700px] lg:h-screen  bg-cover bg-center relative mb-2 md:mb-12">
+
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center">
+            <div class=" w-7/12 flex justify-center flex-col z-20 relative">
+
+                <h1 class="uppercase text-2xl md:text-3xl lg:text-5xl font-bold text-white mb-6 ">
+                    WE ARE <span class="text-gray-900">BRANCO STUDIO</span> AND WE BRING YOUR DESIGN IDEAS TO LIFE
+                </h1>
+                <p class=" text-white text-base md:text-lg uppercase mb-12">EFFECTIVE MEDICINE, NEW MEDICINE EVERYDAY
+                </p>
+
+                <div>
+                    <a href="/track_order.html" class="bg-primary px-8 py-3 text-white text-base uppercase inline">Shop
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero Section -->
+
+    <!-- About Us -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-10">
+                <div>
+                    <h5 class="text-xl md:text-2xl mb-7 font-bold">We work side by side with you to create exceptional
+                        designs.
+                    </h5>
+
+                    <div class="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0">
+                        <div>
+                            <h5 class="text-5xl font-bold text-primary mb-1">450 +</h5>
+                            <p class="text-primary-300 text-xl">Successfully completed projects</p>
+                        </div>
+
+                        <div>
+                            <h5 class="text-5xl font-bold text-primary mb-1">34 +</h5>
+                            <p class="text-primary-300 text-xl">Highly specialized employees</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <p class="text-lg mb-7 text-gray-400">With over 50 years of combined experience, our mission is to
+                        design with your values and vision
+                        in mind. We’re out to create purposeful designs that balance art and creativity with science and
+                        strategy.</p>
+                    <div>
+                        <a href="#" class="button">More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Us Section -->
+
+    <!-- More About Section -->
+    <section class="section bg-linen">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                <div class="flex flex-col justify-center">
+                    <h5 class="text-xl md:text-3xl lg:text-4xl mb-7 font-bold">Design the
+                        Flyer you love
+                    </h5>
+
+                    <p class="text-lg mb-7 text-gray-400">With over 50 years of combined experience, our mission is to
+                        design with your values and vision
+                        in mind. We’re out to create purposeful designs that balance art and creativity with science and
+                        strategy.</p>
+
+                    <div>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <img src="./assets/images/about.png.webp" class="w-full h-[600px] object-cover" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of More About Section -->
+    <!-- <section class="section">
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">Slide 01</li>
+                    <li class="splide__slide">Slide 02</li>
+                    <li class="splide__slide">Slide 03</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+                Prev
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+                Next
+            </button>
+        </div>
+
+        <div class="flex gap-x-6">
+            <div class="carousel_left">
+                Prev
+            </div>
+            <div class="carousel_right">
+                Next
+            </div>
+        </div>
+    </section> -->
+
+    <!-- What we do section -->
+    <section class="section">
+        <div class="container">
+            <h5 class="text-3xl mb-10">Design is for everyone.</h5>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-y-4 group">
+                    <div class="w-24">
+                        <img src="./assets/images/airplane.png" class="w-full" alt="">
+                    </div>
+                    <h5 class="text-xl md:text-2xl text-gray-500 group-hover:text-primary transition-all duration-200">Flyer Design</h5>
+                    <p class="text-gray-400">
+                        You deserve a business flyer that is stylish, today. Don’t put it off until the kids are
+                        older or you have more time.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-y-4 group">
+                    <div class="w-24">
+                        <img src="./assets/images/airplane.png" class="w-full" alt="">
+                    </div>
+                    <h5 class="text-xl md:text-2xl text-gray-500 group-hover:text-primary transition-all duration-200">Logo Design</h5>
+                    <p class="text-gray-400">
+                        You deserve a business flyter that is stylish, today. Don’t put it off until the kids are
+                        older or you have more time.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-y-4 group">
+                    <div class="w-24">
+                        <img src="./assets/images/airplane.png" class="w-full" alt="">
+                    </div>
+                    <h5 class="text-xl md:text-2xl text-gray-500 group-hover:text-primary transition-all duration-200">Book Design</h5>
+                    <p class="text-gray-400">
+                        You deserve a business flyter that is stylish, today. Don’t put it off until the kids are
+                        older or you have more time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of what we do section -->
+
+    <!-- Testimonial Section -->
+    <section class="section bg-linen-700">
+        <div class="container">
+            <div class="flex justify-between mb-6">
+                <span class="slider_btn carousel_left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </span>
+
+                <h5 class="text-lg md:text-2xl">Customer testimonial</h5>
+
+                <span class="slider_btn carousel_right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+            </div>
+
+
+            <div>
+                <div class="splide" role="" aria-label="Splide Basic HTML Example">
+
+                    <div class="splide__track">
+                        <div class="splide__list">
+
+                            <div class="splide__slide">
+
+                                <div class="w-full px-5">
+                                    <div class="w-full p-6 bg-white ">
+                                        <div class="flex gap-x-3 mb-4">
+
+                                            <template x-for="i in 5">
+                                                <span class="text-linen-900 text-base">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </span>
+                                            </template>
+
+                                        </div>
+
+                                        <h5 class="text-lg font-bold mb-4">I would recomend this design services</h5>
+
+                                        <p class="text-base text-gray-400 mb-6">
+                                            You deserve a design that is stylish, today. Grow your business,
+                                            organization
+                                            and Enterprise
+                                        </p>
+
+                                        <div>
+                                            <span class="text-gray-500">By</span> <span>Richard Afoudo</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="splide__slide">
+
+                                <div class="w-full px-5">
+                                    <div class="w-full p-6 bg-white ">
+                                        <div class="flex gap-x-3 mb-4">
+
+                                            <template x-for="i in 5">
+                                                <span class="text-linen-900 text-base">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </span>
+                                            </template>
+
+                                        </div>
+
+                                        <h5 class="text-lg font-bold mb-4">I would recomend this design services</h5>
+
+                                        <p class="text-base text-gray-400 mb-6">
+                                            You deserve a design that is stylish, today. Grow your business,
+                                            organization
+                                            and Enterprise
+                                        </p>
+
+                                        <div>
+                                            <span class="text-gray-500">By</span> <span>Richard Afoudo</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="splide__slide">
+
+                                <div class="w-full px-5">
+                                    <div class="w-full p-6 bg-white ">
+                                        <div class="flex gap-x-3 mb-4">
+
+                                            <template x-for="i in 5">
+                                                <span class="text-linen-900 text-base">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </span>
+                                            </template>
+
+                                        </div>
+
+                                        <h5 class="text-lg font-bold mb-4">I would recomend this design services</h5>
+
+                                        <p class="text-base text-gray-400 mb-6">
+                                            You deserve a design that is stylish, today. Grow your business,
+                                            organization
+                                            and Enterprise
+                                        </p>
+
+                                        <div>
+                                            <span class="text-gray-500">By</span> <span>Richard Afoudo</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="splide__slide">
+
+                                <div class="w-full px-5">
+                                    <div class="w-full p-6 bg-white ">
+                                        <div class="flex gap-x-3 mb-4">
+
+                                            <template x-for="i in 5">
+                                                <span class="text-linen-900 text-base">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </span>
+                                            </template>
+
+                                        </div>
+
+                                        <h5 class="text-lg font-bold mb-4">I would recomend this design services</h5>
+
+                                        <p class="text-base text-gray-400 mb-6">
+                                            You deserve a design that is stylish, today. Grow your business,
+                                            organization
+                                            and Enterprise
+                                        </p>
+
+                                        <div>
+                                            <span class="text-gray-500">By</span> <span>Richard Afoudo</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="splide__slide">
+
+                                <div class="w-full px-5">
+                                    <div class="w-full p-6 bg-white ">
+                                        <div class="flex gap-x-3 mb-4">
+
+                                            <template x-for="i in 5">
+                                                <span class="text-linen-900 text-base">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </span>
+                                            </template>
+
+                                        </div>
+
+                                        <h5 class="text-lg font-bold mb-4">I would recomend this design services</h5>
+
+                                        <p class="text-base text-gray-400 mb-6">
+                                            You deserve a design that is stylish, today. Grow your business,
+                                            organization
+                                            and Enterprise
+                                        </p>
+
+                                        <div>
+                                            <span class="text-gray-500">By</span> <span>Richard Afoudo</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End of Testimonial Section -->
+
+
+    <!-- Email update section -->
+    <section style="background-image: url('assets/images/hero_2.jpg.webp'); background-position: 50% -25px;"
+        class="h-[400px]  bg-cover bg-center relative">
+
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <div class="container h-full flex flex-col justify-center">
+            <div class=" w-7/12 flex justify-center flex-col z-20 relative">
+
+                <h1 class="uppercase text-2xl md:text-3xl font-bold text-white mb-6 ">
+                    Get notified on each updates.
+                </h1>
+                <div class="mb-6 flex">
+                    <input class="text-white border-2 border-white outline-none bg-transparent block p-3"
+                        placeholder="Enter your email address" type="text">
+                    <button
+                        class="p-3 text-white border-2 border-white hover:bg-white hover:text-black">Subscribe</button>
+                </div>
+                <p class=" text-white text-sm md:text-base uppercase mb-12">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Fugiat commodi veniam doloremque ducimus tempora.</p>
+            </div>
+        </div>
+    </section>
+    <!-- End of email update section -->
+
+
+    <!-- Section About Us -->
+    <section id="about-us" class="section">
+        <div class="container">
+            <div class="flex gap-x-16 items-center">
+                <div
+                    class="h-48 md:h-56 lg:h-[32rem] w-full shrink-0 md:w-7/12 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden relative">
+
+                    <img src="./assets/images/person_1.jpg.webp"
+                        class="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-400"
+                        alt="">
+
+                </div>
+
+                <div>
+                    <div class="flex flex-col mb-8">
+                        <h5 class="uppercase text-gray-400 text-sm mb-2">MERCHANT COMPANY</h5>
+                        <h5 class="text-black text-4xl font-bold mb-5">About Us</h5>
+                        <p class=" text-gray-400 text-sm font-light mb-6">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui fuga ipsa, repellat blanditiis
+                            nihil, consectetur. Consequuntur eum inventore, rem maxime, nisi excepturi ipsam libero
+                            ratione adipisci alias eius vero vel!
+                        </p>
+
+                        <div>
+                            <a href="/track_order.html"
+                                class=" button outline-none bg-black border-black text-white hover:text-black hover:bg-white inline-block">
+                                Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Section About Us -->
+
+    <!--Team Section -->
+    <section id="team" class="section bg-gray-200">
+        <div class="container">
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">Team</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Leadership</h5>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                <template x-for="item in 3">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class=" w-40 h-40 md:w-44 md:h-44 bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 ">
+
+                            <img src="./assets/images/person_1.jpg.webp" alt="">
+
+                        </div>
+
+                        <h2 class="mb-1 md:mb-2 font-bold text-base md:text-lg">Christine Rooster</h2>
+                        <h5 class="text-gray-400 mb-4 font-thin text-xs md:text-sm">Co-founder, president</h5>
+
+                        <p class="mb-4 font-light text-center text-sm text-gray-400">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            necessitatibus nesciunt minus illum molestiae odit explicabo ipsum nam.</p>
+                        <div class="flex space-x-2">
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-twitter"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </span>
+                            <span
+                                class="flex items-center justify-center bg-gray-700 text-white w-6 h-6 text-sm rounded-full">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+    <!-- End of Team Section -->
+
+
+    <!--Blog Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">Blog</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Blog Post</h5>
+                </div>
+            </div>
+
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-x-10">
+                <template x-for="item in 3">
+                    <div class="flex flex-col">
+                        <div
+                            class="h-48 md:h-56 lg:h-64 w-full bg-red-500 border-2 border-white flex items-center justify-center text-white text-base mb-3 md:mb-5 overflow-hidden">
+
+                            <img src="./assets/images/person_1.jpg.webp" class="object-cover w-full h-full" alt="">
+
+                        </div>
+                        <a href="./single_post.html" class="text-black text-lg md:text-xl mb-1">How Logistics Company
+                            Improve
+                            Spendings</a>
+                        <div class="flex items-center space-x-3  mb-2 md:mb-4 md:text-sm font-light text-gray-400">
+                            <span>by Jed Wilson</span> <span class="text-[5px]"><i
+                                    class="fa-solid fa-circle"></i></span> <span>Jan 18, 2019</span> <span
+                                class="text-[5px]"><i class="fa-solid fa-circle"></i></span> <span
+                                class="text-primary">News</span>
+                        </div>
+
+                        <p class="mb-4 font-light  text-sm md:text-base">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequatur excepturi
+                            sed
+                            minus illum molestiae odit explicabo ipsum nam.</p>
+
+                        <a href="#" class="text-primary text-lg">Continue Reading ...</a>
+
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+    <!-- End of Blog Section -->
+
+    <!-- Contact section -->
+    <section id="services" class="section bg-gray-100">
+        <div class="container">
+
+            <div class="flex flex-wrap justify-center">
+                <!-- Section Title -->
+                <div class="flex flex-col w-full md:w-6/12 items-center mb-8">
+                    <h5 class="uppercase text-gray-400 text-sm mb-2">CONTACT FORM</h5>
+                    <h5 class="text-black text-4xl font-bold mb-5">Get In Touch</h5>
+                </div>
+
+                <div class="w-full flex justify-center">
+                    <div class="bg-white p-10 w-full md:w-8/12">
+                        <h5 class="text-xl text-black mb-10">Contact Form</h5>
+
+                        <div>
+                            <form>
+                                <div class="grid grid-cols-1 gap-y-4">
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3">
+                                        <div class="flex flex-col">
+                                            <h6 class="mb-1">First Name</h6>
+                                            <input type="text" class="input">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <h6 class="mb-1">Last Name</h6>
+                                            <input type="text" class="input">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-1">Email</h6>
+                                        <input type="email" class="input">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-1">Subject</h6>
+                                        <input type="text" class="input">
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-1">Message</h6>
+                                        <textarea name="" id="" cols="30" rows="5" class="input"></textarea></textarea>
+                                    </div>
+
+                                    <div class="flex">
+                                        <button class="bg-primary px-8 py-3 text-white text-base uppercase">Send
+                                            Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End of Contact section -->
+
+
+    <!-- Footer section -->
+    <footer class="section">
+        <div class="container p-6">
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 pb-10 md:pb-20 border-b border-gray-300">
+
+                <div class="w-full md:w-4/12 flex flex-col space-y-4">
+                    <h4 class="text-bold text-black text-2xl">Branco Studio</h4>
+                    <p class="text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                        facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                    <a href="tel" class="text-2xl text-linen-900 inline-block mb-4 hover:underline transition-all duration-150">+237672367020</a>
+
+                    <a href="email" class="text-sm font-light">brancostudio@gmail.com</a>
+                </div>
+
+                <div class="w-full md:w-8/12 flex flex-col md:flex-row space-y-4 md:space-y-0 justify-end">
+                    <div class="flex flex-col space-y-4 md:mr-16 lg:mr-32">
+                        <h4 class="text-bold text-black text-lg">Quick Links</h4>
+                        <div class="flex flex-col space-y-3">
+                            <a href="" class="text-gray-500 text-base hover:underline transition-all">About Us</a>
+                            <a href="" class="text-gray-500 text-base">Services</a>
+
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-5">
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-bold text-black text-lg">Follow Us</h4>
+                            <div class="flex space-x-4 text-gray-500 text-lg">
+                                <a href="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="pt-10 text-center text-gray-400 text-sm md:text-base">Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                with <span class="text-red-500"><i class="fa-solid fa-heart"></i></span> by <span
+                    class="text-gray-500">Mr.Arc</span>
+            </p>
+        </div>
+    </footer>
+    <!-- End of footer section -->
+
+
+</body>
+
+<script>
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('pageData', () => ({
+
+            open: false,
+            showBar: true,
+            showSplash: false,
+
+            toggleSplash() {
+                setTimeout(() => {
+                    this.showSplash = true
+                }, 1000);
+            }
+        }))
+    })
+
+
+
+
+
+
+</script>
+
+<script src="./assets/js/splider_configs.js"></script>
+
+</html>

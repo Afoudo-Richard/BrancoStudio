@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav_active {
+    @apply text-red-500 !important;
+    
+}
+
+.section{
+    @apply py-8 md:py-14 lg:py-20
+}
+
+.button{
+    @apply px-5 py-2 border bg-primary text-white hover:bg-primary-300 outline-none rounded-lg transition-all duration-150
+}
+
+.btn_rounded_corner{
+    @apply bg-primary px-8 py-3 text-white  text-base    uppercase rounded-full hover:bg-white hover:text-blue-zodiac transition-all duration-100 inline-block
+}
+
+.header_icon{
+    @apply w-5 h-5 p-4 bg-black rounded-full items-center justify-center text-sm text-white hover:text-primary transition-colors duration-100 hidden md:flex
+}
+
+.input {
+    @apply border outline-none border-gray-300 px-3 py-2 text-base focus:border-primary
+}
+
+.slider_btn {
+    @apply text-3xl text-gray-500 hover:text-black transition-all duration-100 inline-block
+}
